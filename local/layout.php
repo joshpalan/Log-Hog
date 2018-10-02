@@ -1,3 +1,3 @@
 <?php
-$currentSelectedTheme = "default";
+$currentSelectedTheme = 'default';
 $listOfFolders = array('default');

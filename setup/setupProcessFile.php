@@ -1,2 +1,3 @@
 <?php
-	$setupProcess = 'preStart';
+	$setupProcess = 'step1';
+	?>

@@ -1,4 +1,35 @@
 <?php
+//Define autoloader
+function __autoload($class)
+{
+    $parts = explode('\\', $class);
+    require end($parts) . '.php';
+}
+
+define('LOGHOG_BASE_DIR', __DIR__);
+define('LOGHOG_CORE', LOGHOG_BASE_DIR . 'core/');
+define('LOGHOG_CORE_CONF', LOGHOG_BASE_DIR . 'core/conf/');
+define('LOGHOG_CORE_HTML', LOGHOG_BASE_DIR . 'core/html/');
+define('LOGHOG_CORE_IMG', LOGHOG_BASE_DIR . 'core/img/');
+define('LOGHOG_CORE_JS', LOGHOG_BASE_DIR . 'core/js/');
+define('LOGHOG_CORE_PHP', LOGHOG_BASE_DIR . 'core/php/');
+define('LOGHOG_CORE_TEMPLATE', LOGHOG_BASE_DIR . 'core/template/');
+define('LOGHOG_CORE_THEMES', LOGHOG_BASE_DIR . 'core/Themes/');
+
+define('LOGHOG_CONFIG_DIR', LOGHOG_BASE_DIR . 'config/');
+define('LOGHOG_LOCAL_DIR', LOGHOG_BASE_DIR . 'local/');
+define('LOGHOG_RESTORE_DIR', LOGHOG_BASE_DIR . 'restore/');
+
+define('LOGHOG_SETTINGS_DIR', LOGHOG_BASE_DIR . 'settings/');
+define('LOGHOG_SETUP_DIR', LOGHOG_BASE_DIR . 'setup/');
+define('LOGHOG_TMP_DIR', LOGHOG_BASE_DIR . 'tmp/');
+define('LOGHOG_UPDATE_DIR', LOGHOG_BASE_DIR . 'update/');
+
+Use Core\Base\App as App;
+
+$app = new App();
+$app->run();
+
 require_once('core/php/errorCheckFunctions.php');
 $currentPage = "index.php";
 checkIfFilesExist(
